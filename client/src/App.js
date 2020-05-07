@@ -1,9 +1,11 @@
 import React, { Component }  from 'react';
 import './App.css';
-import {Container,Divider,Grid,Header,Image,List,Menu,Segment,Visibility,} from 'semantic-ui-react'
+import {Container,Image,Menu,Visibility,} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css';
-import { menuStyle, fixedMenuStyle, overlayStyle } from './helpers/styleHelper';
+import { menuStyle, fixedMenuStyle } from './helpers/styleHelper';
 import MoviesPage from './components/pages/MoviesPage';
+import Footer from './components/Footer'
+
 import { Link,Route } from 'react-router-dom';
 
 
@@ -91,58 +93,7 @@ class App extends Component {
 						nulla reprehenderit!
 					</div>
         </Container>
-
-				<Segment
-					inverted
-					style={{ margin: '5em 0em 0em', padding: '5em 0em' }}
-					vertical
-				>
-					<Container textAlign='center'>
-						<Grid columns={4} divided stackable inverted>
-							<Grid.Row>
-								<Grid.Column>
-									<Header inverted as='h4' content='Group 1' />
-									<List link inverted>
-										<List.Item as='a'>Link One</List.Item>
-										<List.Item as='a'>Link Two</List.Item>
-										<List.Item as='a'>Link Three</List.Item>
-										<List.Item as='a'>Link Four</List.Item>
-									</List>
-								</Grid.Column>
-								<Grid.Column>
-									<Header inverted as='h4' content='Group 2' />
-									<List link inverted>
-										<List.Item as='a'>Link One</List.Item>
-										<List.Item as='a'>Link Two</List.Item>
-										<List.Item as='a'>Link Three</List.Item>
-										<List.Item as='a'>Link Four</List.Item>
-									</List>
-								</Grid.Column>
-								<Grid.Column>
-									<Header inverted as='h4' content='Group 3' />
-									<List link inverted>
-										<List.Item as='a'>Link One</List.Item>
-										<List.Item as='a'>Link Two</List.Item>
-										<List.Item as='a'>Link Three</List.Item>
-										<List.Item as='a'>Link Four</List.Item>
-									</List>
-								</Grid.Column>
-								<Grid.Column>
-									<Header inverted as='h4' content='Footer Header' />
-									<p>Extra space for a call to action inside the footer that could help re-engage users.</p>
-								</Grid.Column>
-							</Grid.Row>
-						</Grid>
-						<Divider inverted section />
-						<Image src='https://react.semantic-ui.com/logo.png' centered size='mini' />
-						<List horizontal inverted divided link>
-							<List.Item as='a' href='#'>Site Map</List.Item>
-							<List.Item as='a' href='#'>Contact Us</List.Item>
-							<List.Item as='a' href='#'>Terms and Conditions</List.Item>
-							<List.Item as='a' href='#'>Privacy Policy</List.Item>
-						</List>
-					</Container>
-				</Segment>
+      <Footer/>
       </div>
     );
   }
