@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MovieCard from './MovieCard';
 
 const MoviesList = ({movies}) => {
 
@@ -12,7 +13,8 @@ const MoviesList = ({movies}) => {
     const moviesList =(
         <div>
             {
-                movies.error.response ?  <h3>Error retrieving data!</h3> : "Hata yok"
+                movies.error.response ?  <h3>Error retrieving data!</h3> : 
+                movies.movies.map(movie => <MovieCard key={movie._id} movie={movie}/>)
             }
         </div>
     );
@@ -24,9 +26,10 @@ const MoviesList = ({movies}) => {
         )
 }
 
-MoviesList.propTypes={
-    movies:PropTypes.object.isRequired
+MoviesList.propTypes = {
+	movies: PropTypes.shape({
+		movies: PropTypes.array.isRequired
+	}).isRequired
 };
-
 
 export default MoviesList;
