@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MovieCard from './MovieCard';
+import { Grid } from 'semantic-ui-react';
+
 
 const MoviesList = ({movies}) => {
 
@@ -13,8 +15,13 @@ const MoviesList = ({movies}) => {
     const moviesList =(
         <div>
             {
-                movies.error.response ?  <h3>Error retrieving data!</h3> : 
-                movies.movies.map(movie => <MovieCard key={movie._id} movie={movie}/>)
+                movies.error.response ?  <h3>Error retrieving data!</h3> 
+                :
+                <Grid stackable columns={3}>
+                    {
+                        movies.movies.map(movie => <MovieCard key={movie._id} movie={movie} />)
+                    }
+                </Grid>
             }
         </div>
     );
